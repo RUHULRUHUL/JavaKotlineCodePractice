@@ -13,7 +13,7 @@ public class DSAlgorithm {
     private static void BubbleSort() {
         int[] array = {12, 2, 5, 3, 10};
         for (int i = 0; i < array.length - 1; i++) {
-            for (int j = 0; j < array.length - 1; j++) {
+            for (int j = 0; j < array.length - 1 - i; j++) {
                 if (array[j] > array[j + 1]) {
                     //swap two array number in array location
                     int temp = array[j];

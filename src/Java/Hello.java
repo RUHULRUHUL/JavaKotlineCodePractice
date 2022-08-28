@@ -28,8 +28,125 @@ public class Hello {
         //StringArrayInsert();
         //StringCheckHaveNumber();
         //DuplicatedItemRemoved();
-        swapTwoNumber();
+        //swapTwoNumber();
+        //StringOperation();
+        StringBufferBuilder();
 
+
+    }
+
+    private static void StringBufferBuilder() {
+        StringBuffer sb = new StringBuffer("Hello ");
+        sb.append("Java");
+        System.out.println("String Buffer:  " + sb);
+
+        StringBuilder builder = new StringBuilder();
+        builder.append("String ");
+        builder.append("Builder ");
+        builder.append( 1);
+        System.out.println("String Builder:  " + builder.toString());
+    }
+
+    private static void StringOperation() {
+        //CreateStringObject();
+        //StringConvertCharToString();
+        //ImmutableString();
+        //AnotherRef();
+        //StringCompare();
+        Substring();
+
+
+    }
+
+    private static void Substring() {
+        String s = "Bangladesh";
+        System.out.println("Original String: " + s);
+        System.out.println("Substring starting from index 5: " + s.substring(6));
+        System.out.println("Substring starting from index 0 to 6: " + s.substring(0, 6));
+
+        /* String Split*/
+        String input = "1,2,3,4,5,6,7,8,9,10,1,3,4,8,9";
+        String[] array = input.split(",");
+
+        for (String item : array) {
+            System.out.print(" " + item);
+
+        }
+
+    }
+
+    private static void StringCompare() {
+
+        /*
+        1. ==
+        2. equals()
+        3. compareTo
+
+        * */
+
+
+        String s = "BugBd";
+        String s2 = "BugBd";
+        String s3 = new String("bugBd");
+
+        /*Reference Match with Value Match (==) */
+        System.out.println(s == s3);
+
+        /*Value Match Only) */
+        System.out.println("equals Method : " + s.equals(s3));
+
+        /*Value Match Ignore Case Sensitive ) */
+        System.out.println("equalsIgnoreCase :  " + s.equalsIgnoreCase(s3));
+
+
+        /*compare  Match value Ignore Case Sensitive ) */
+        System.out.println("Compare to : " + s.compareTo(s3));
+        System.out.println("Compare equalIgnore to : " + s.compareToIgnoreCase(s3));
+
+
+    }
+
+    private static void AnotherRef() {
+        String s = new String();
+        s = "india";
+
+        System.out.println("Ref " + s);
+    }
+
+    private static void ImmutableString() {
+        String example = "Md Ruhul";
+        example = example.concat(" Amin");//Explicitly Assign
+
+        System.out.println(example);
+
+        String s = new String();
+        s = "Bangladesh";
+
+        System.out.println("Ref: " + s);
+
+    }
+
+    private static void StringConvertCharToString() {
+        char ch[] = {'s', 't', 'r', 'i', 'n', 'g', 's'};
+        String input = new String(ch);
+        System.out.println(input);
+
+        String input1 = "Bangladesh";
+        char[] chars = input1.toCharArray();
+        for (char c : chars) {
+            System.out.println(c);
+        }
+
+    }
+
+    private static void CreateStringObject() {
+        String input = "Bangladesh";
+        String input1 = new String();
+        input1 = "Md";
+
+
+        System.out.println("String Literal " + input);
+        System.out.println("By New Keyword Instance Create: " + input1);
 
     }
 
@@ -41,8 +158,9 @@ public class Hello {
         System.out.println(" b " + b);
 
 
+        temp = a;
         a = b;
-        b = a;
+        b = temp;
 
         System.out.println();
 
