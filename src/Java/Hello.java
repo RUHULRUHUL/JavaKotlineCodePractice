@@ -30,7 +30,7 @@ public class Hello {
         //DuplicatedItemRemoved();
         //swapTwoNumber();
         //StringOperation();
-        StringBufferBuilder();
+
 
 
     }
@@ -53,7 +53,8 @@ public class Hello {
         //ImmutableString();
         //AnotherRef();
         //StringCompare();
-        Substring();
+        //Substring();
+        StringBufferBuilder();
 
 
     }
