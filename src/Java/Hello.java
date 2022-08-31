@@ -30,9 +30,83 @@ public class Hello {
         //DuplicatedItemRemoved();
         //swapTwoNumber();
         //StringOperation();
+        // FibonacciNumber();
+        //FactorialNumber();
+        //RecursionExample();
+        PrimeNumber();
 
 
+    }
 
+    private static void PrimeNumber() {
+        int number = 3;
+        int countCheck = 0;
+
+        for (int i = 2; i < number; i++) {
+            if (number % i == 0) {
+                countCheck++;
+                break;
+            }
+        }
+        if (countCheck == 0) {
+            System.out.println(" not Prime Number " + number);
+        } else {
+            System.out.println(" Prime Number");
+        }
+    }
+
+    private static void RecursionExample() {
+
+        print(5);
+        int totalFactorial = factorial(0);
+        System.out.println("Total Factorial: " + String.valueOf(totalFactorial));
+
+    }
+
+    private static int factorial(int i) {
+        if (i == 0) {
+            return 1;
+        } else {
+            return i * factorial(i - 1);
+        }
+    }
+
+    private static void print(int i) {
+        if (i == 0) {
+            return;
+        }
+        System.out.println("Recursion Value: " + i);
+        print(i - 1);
+    }
+
+    private static void FactorialNumber() {
+        int FibonacciNumber = 5;
+        int input = 5;
+        for (int i = 5; i > input; i--) {
+            FibonacciNumber = FibonacciNumber * i;
+
+        }
+        System.out.println("Fibonacci number: " + FibonacciNumber);
+    }
+
+    private static void FibonacciNumber() {
+        int FirstNumber = 0;
+        int SecondNumber = 1;
+        int fibonacciNumber = 0;
+
+        System.out.println("Fibonacci Number: " + FirstNumber);
+        System.out.println("Fibonacci Number: " + SecondNumber);
+
+        for (int i = 0; i < 10; i++) {
+
+            fibonacciNumber = FirstNumber + SecondNumber;
+
+            System.out.println(fibonacciNumber);
+
+            FirstNumber = SecondNumber;
+            SecondNumber = fibonacciNumber;
+
+        }
     }
 
     private static void StringBufferBuilder() {
@@ -43,7 +117,7 @@ public class Hello {
         StringBuilder builder = new StringBuilder();
         builder.append("String ");
         builder.append("Builder ");
-        builder.append( 1);
+        builder.append(1);
         System.out.println("String Builder:  " + builder.toString());
     }
 
