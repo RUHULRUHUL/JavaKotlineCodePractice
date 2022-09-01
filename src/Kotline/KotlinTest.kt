@@ -5,8 +5,106 @@ fun main() {
     //init()
     //getInputNumber()
     //ControlFlow()
-    FunctionKotlin()
+    //FunctionKotlin()
+    //ExceptionHandling()
+    //NullSafety()
+    //SmartCast()
+    //UnsafeandSafeCastOperator()
+    ElvisOperator()
 
+}
+
+fun ElvisOperator() {
+    var text: String = null ?: "Test Txt"
+    println(text)
+}
+
+fun UnsafeandSafeCastOperator() {
+    /*Unsafe cast operator: as*/
+    var input: Any? = null
+    var number: Int = 10
+
+    /*    var res = input as String
+        var num = number as String
+
+        println(res)
+        println(num)*/
+
+
+    /*safe cast operator: as?*/
+    var res1 = input as? String
+    var num1 = number as? String
+
+    println(res1)
+    println(num1)
+
+}
+
+fun SmartCast() {
+
+    var name: String? = "Rahul Amin"
+    if (name != null) {
+        println(name.length)
+    }
+
+    var name1: String? = "Amin"
+
+    // println(name1.length)
+
+    if (name1 is String) {
+        println(name1.length)
+    }
+
+
+}
+
+fun NullSafety() {
+
+    var input: String?
+    var input1: String?
+
+    input = null
+    input = "this is test"
+    input1 = input
+
+    if (input == null) {
+        println("null value")
+    }
+
+    println(input)
+    println(input1)
+
+    /*    val str: String = null // compile error
+        str = "hello" // compile error Val cannot be reassign
+        var str2: String = "hello"
+        str2 = null // compile error  */
+
+
+}
+
+fun ExceptionHandling() {
+    /*   try
+         catch
+         finally
+         throw
+         */
+
+
+
+    try {
+        var number: Int = 20;
+        var res: Int = number / 0
+
+
+    } catch (e: Exception) {
+        println("Exception: " + e)
+
+    } catch (e: ArithmeticException) {
+        println("ArithmeticException ")
+    } finally {
+        println("Ok Next Step Execute")
+
+    }
 
 }
 
