@@ -1,11 +1,79 @@
+import com.sun.org.apache.xerces.internal.impl.xpath.regex.Match
 import java.util.Scanner
 
 fun main() {
     //init()
     //getInputNumber()
-    ControlFlow()
+    //ControlFlow()
+    FunctionKotlin()
 
 
+}
+
+fun FunctionKotlin() {
+    /*    Standard library function
+            User defined function*/
+
+    //UserDefineAndLibraryFunction();
+    var totalFactorial = factorialValue(5)
+    println("total Factorial: " + totalFactorial)
+
+    KotlinDefaultArgument(10)
+
+    HigherOrderFunctionWithLamda(10, 20) { result ->
+        println("Higher Order Function: " + result)
+
+    };
+
+    HigherOrderFunctionWithLamda1(10, result = { result ->
+        println("Higher Order Function: " + result)
+
+    }, 10)
+
+
+}
+
+fun HigherOrderFunctionWithLamda(i: Int, i1: Int, result: (Int) -> Unit) {
+    val res = i + i1
+    result(res)
+
+}
+
+fun HigherOrderFunctionWithLamda1(i: Int, result: (Int) -> Unit, i1: Int) {
+    val res = i + i1
+    result(res)
+
+}
+
+fun KotlinDefaultArgument(i: Int = 1, i1: Int = 2, latter: Char = 'c') {
+
+    println("i " + i)
+    println("i1 " + i1)
+    println("latter " + latter)
+
+}
+
+fun factorialValue(i: Int): Int {
+    if (i == 0) {
+        return 1
+    } else {
+        return i * factorialValue(i - 1)
+    }
+}
+
+fun UserDefineAndLibraryFunction() {
+    var i = 10
+    var result = Math.sqrt(i.toDouble())
+    println("Result: " + result)
+
+    //User Defined Function
+    var r = add(1, 2)
+    println("Result of two Value: " + r)
+}
+
+fun add(i: Int, i1: Int): Int {
+
+    return i + i1
 }
 
 fun ControlFlow() {
@@ -16,8 +84,7 @@ fun ControlFlow() {
 }
 
 fun whileLoop() {
-    var i: Int = 0
-    /*    while (i < 5) {
+    var i: Int = 0/*    while (i < 5) {
             println(i)
             i++
         }*/
@@ -154,8 +221,7 @@ fun init() {
     KotlinOparator()
 }
 
-fun DataTypePractice() {
-    /*    Number
+fun DataTypePractice() {/*    Number
         Character
         Boolean
         Array
@@ -172,8 +238,7 @@ fun DataTypePractice() {
 fun StringDataType() {
 
     /*1. Escaped String:*/
-    var input = "Md, \n Ruhul"
-    /*2.Raw String*/
+    var input = "Md, \n Ruhul"/*2.Raw String*/
     var rawString = """
         this is the test Raw String
     """.trimIndent()
