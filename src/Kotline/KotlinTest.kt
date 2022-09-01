@@ -10,7 +10,76 @@ fun main() {
     //NullSafety()
     //SmartCast()
     //UnsafeandSafeCastOperator()
-    ElvisOperator()
+    //ElvisOperator()
+    //CollectionPractice()
+    oopPractice()
+
+
+}
+
+fun oopPractice() {
+
+}
+
+fun CollectionPractice() {
+
+    MapPractice()
+    SetPractice()
+    ListPractice()
+
+
+}
+
+fun ListPractice() {
+
+    var listItem = listOf<Int>()
+
+    var listItem1:ArrayList<Int> = arrayListOf<Int>()
+    listItem1.add(1)
+
+}
+
+fun SetPractice() {
+    val setList = setOf<Int>(1, 1, 2, 3, 4, 5, 5, 1, 4)
+    for (item in setList) {
+        println("Set item : " + item)
+    }
+
+    var setList1: MutableSet<Int> = mutableSetOf<Int>()
+    setList1.add(10)
+
+    var hashSet: HashSet<Int> = HashSet<Int>()
+    hashSet.add(10)
+
+    var hassetList = setOf<Int>()
+
+
+}
+
+fun MapPractice() {
+
+    val ranks = mapOf(1 to "India", 2 to "Australia", 3 to "England", 4 to "Africa")
+
+    var mapList: Map<Int, String> = mapOf<Int, String>()
+    mapList = ranks
+
+    for (i in 1..mapList.size) {
+        println(mapList.get(i))
+    }
+
+
+    var hasMapList: HashMap<String, String> = HashMap<String, String>()
+    hasMapList.put("Name", "MD Ruhul Amin")
+    hasMapList.put("Subject", "CSE")
+
+    for (item in hasMapList) {
+        println(item.value)
+    }
+
+    var mutableMapList: MutableMap<String, String> = mutableMapOf<String, String>()
+    mutableMapList.put("Name", "Md Rahul ")
+    mutableMapList.put("Roll", "300510")
+
 
 }
 
