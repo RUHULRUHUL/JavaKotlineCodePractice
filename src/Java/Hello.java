@@ -1,7 +1,5 @@
 package Java;
 
-import com.sun.deploy.util.StringUtils;
-
 import java.util.*;
 import java.util.stream.Collectors;
 
@@ -11,7 +9,7 @@ public class Hello {
 
     public static void main(String[] args) {
 
-        init();
+        //init();
         // switchFunction();
         // forLoop();
         // WhileLoop();
@@ -33,8 +31,62 @@ public class Hello {
         // FibonacciNumber();
         //FactorialNumber();
         //RecursionExample();
-        PrimeNumber();
+        //PrimeNumber();
+        //ReverseList();
+        palindrome();
 
+
+    }
+
+    private static void palindrome() {
+
+        String input = "121";
+        String reverseStr = "";
+
+        char[] chars = input.toCharArray();
+
+        for (int i = chars.length - 1; i >= 0; i--) {
+            reverseStr = reverseStr + chars[i];
+        }
+
+/*        for (char c : chars) {
+            reverseStr = reverseStr + c;
+        }*/
+
+        System.out.println("Original String: " + input);
+        System.out.println("Reverse String: " + reverseStr);
+
+        if (input.equalsIgnoreCase(reverseStr)) {
+            System.out.println("Palindrome Number");
+        } else {
+            System.out.println("Not Palindrome Number");
+        }
+
+
+    }
+
+    private static void ReverseList() {
+        List<String> arrayList = new ArrayList<>();
+        arrayList.add("1");
+        arrayList.add("2");
+        arrayList.add("3");
+        arrayList.add("4");
+        arrayList.add("5");
+
+
+        //Traverse
+        for (int i = 0; i < arrayList.size(); i++) {
+            System.out.println("Traverse Item: " + arrayList.get(i));
+
+        }
+
+        System.out.println();
+
+        //Reverse
+        for (int i = arrayList.size() - 1; i >= 0; i--) {
+            System.out.println("Reverse Item: " + arrayList.get(i));
+
+        }
 
     }
 

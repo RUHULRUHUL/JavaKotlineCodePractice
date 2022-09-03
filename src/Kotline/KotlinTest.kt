@@ -1,4 +1,3 @@
-import com.sun.org.apache.xerces.internal.impl.xpath.regex.Match
 import java.util.Scanner
 
 fun main() {
@@ -19,7 +18,196 @@ fun main() {
 
 fun oopPractice() {
 
+
+    // ClassPractice()
+    //NestedIneerClass()
+    //ConstratorPractice()
+    //DataClass()
+    Extensionfun()
+
+
 }
+
+fun String.getTotalCharCount(input: String?): Int {
+
+    if (input != null) {
+        return input.length
+
+    } else {
+        return 0
+
+    }
+
+}
+
+fun Extensionfun() {
+    var input: String = "Bangladesh"
+
+    var result: Int = input.getTotalCharCount(input)
+
+    println("Extension Function total Char count : "+result)
+}
+
+fun DataClass() {
+    val countryList: ArrayList<Country> = arrayListOf()
+
+    countryList.add(Country("Bangladesh", 88))
+    countryList.add(Country("usa", 1))
+    countryList.add(Country("japan", 25))
+
+    for (Country in countryList) {
+        println("Country Name: " + Country.name + " country Code: " + Country.countryCode)
+    }
+
+}
+
+data class Country(val name: String?, val countryCode: Int)
+
+fun ConstratorPractice() {
+    PrimaryConstractor()
+    Secondaryconstructor()
+    SecondaryConstractorCallSuperDerived();
+}
+
+fun SecondaryConstractorCallSuperDerived() {
+
+    var persion1 = MdRahul("", "")
+
+}
+
+open class Persion {
+
+    constructor(name: String?, id: String?) {
+        println(name)
+        println(id)
+    }
+
+    constructor(name: String?, id: String?, password: String?) {
+        println(name)
+        println(id)
+        println(password)
+    }
+
+}
+
+class MdRahul : Persion {
+    constructor(name: String?, id: String?) : super(name, id) {
+
+    }
+
+    constructor(name: String?, id: String?, password: String?) : super(name, id, password) {
+
+    }
+
+}
+
+fun Secondaryconstructor() {
+    val s1 = Student2("Md", 510, "Cse")
+    s1.display()
+}
+
+fun PrimaryConstractor() {
+    val student1 = Student1("Md", 510, "Cse")
+    student1.display()
+}
+
+class Student2() {
+    var name: String? = null
+    var roll: Int? = null
+    var department: String? = null
+
+    constructor(name: String?, roll: Int?, department: String?) : this() {
+        this.name = name
+        this.roll = roll
+        this.department = department
+    }
+
+    constructor(name: String?, roll: Int?) : this() {
+        this.department = department
+    }
+
+    fun display() {
+        println("Name: " + name)
+        println("roll: " + roll)
+        println("depertment: " + department)
+    }
+
+}
+
+class Student1(name: String?, roll: Int?, department: String) {
+    var name: String? = null
+    var roll: Int? = null
+    var department: String? = null
+
+    init {
+        println("Primary Constructor")
+        this.name = name
+        this.roll = roll
+        this.department = department
+
+    }
+
+    fun display() {
+        println("Name: " + name)
+        println("roll: " + roll)
+        println("depertment: " + department)
+    }
+}
+
+fun NestedIneerClass() {
+    val student = Student("ruhul", 510, "01767051482")
+    student.display()
+    //Inner Class
+    println(student.StudentDepartment().departmentOfGroup)
+
+    //Nested class
+    val common = Student.studentCommon()
+    println(common.depertment)
+    println(common.name)
+
+}
+
+fun ClassPractice() {
+    val student = Student(null, 510, "01767051482")
+    student.display()
+
+}
+
+class Student() {
+
+    var name: String? = null
+    var roll: Int? = null
+    var phone: String? = null
+
+    constructor(name: String?, roll: Int?, phone: String?) : this() {
+        this.name = name
+        this.roll = roll
+        this.phone = phone
+    }
+
+    fun display() {
+        if (name != null && roll != null && phone != null) {
+            println("Student Name: " + name)
+            println("Student roll: " + roll)
+            println("Student phone: " + phone)
+        } else {
+            println("Problem...")
+        }
+
+    }
+
+    class studentCommon() {
+        var name: String = "Cse"
+        var depertment: String = "Computer Technology"
+    }
+
+    inner class StudentDepartment() {
+        var departmentOfGroup: String = "Science"
+    }
+
+
+}
+
 
 fun CollectionPractice() {
 
@@ -34,7 +222,7 @@ fun ListPractice() {
 
     var listItem = listOf<Int>()
 
-    var listItem1:ArrayList<Int> = arrayListOf<Int>()
+    var listItem1: ArrayList<Int> = arrayListOf<Int>()
     listItem1.add(1)
 
 }
