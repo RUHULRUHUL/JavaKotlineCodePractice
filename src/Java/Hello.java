@@ -9,7 +9,7 @@ public class Hello {
 
     public static void main(String[] args) {
 
-        //init();
+        init();
         // switchFunction();
         // forLoop();
         // WhileLoop();
@@ -33,8 +33,289 @@ public class Hello {
         //RecursionExample();
         //PrimeNumber();
         //ReverseList();
-        palindrome();
+        //palindrome();
+        //SinglePatternObject();
+        //ProblemSolvingTamimShaharir();
+        //mcqJava();
+        //OperatorNull();
+        subString();
 
+
+    }
+
+    private static void subString() {
+        String input = "WIFI:S:TNW;T:WPA;P:TNWTNW5598;;";
+        String WifiName;
+        String WifiPass;
+        String WifiSecurity;
+
+        String[] splitArray = input.split(";");
+
+        WifiName = splitArray[0].substring(7);
+        WifiSecurity = splitArray[1].substring(2);
+        WifiPass = splitArray[2].substring(2);
+
+        System.out.println("WifiName: " + WifiName);
+        System.out.println("WifiPassword : " + WifiPass);
+        System.out.println("WifiSecurity: " + WifiSecurity);
+    }
+
+    private static void OperatorNull() {
+        String input = null;
+        System.out.println(input.length());
+
+    }
+
+    private static void mcqJava() {
+
+
+    }
+
+
+    private static void ProblemSolvingTamimShaharir() {
+        //problem1();
+        //problem2();
+        //problem3();
+        //problem4();
+        //problem5();
+        //problem6();
+        //lsdDigit();
+        //problem7();
+        smallToLarge();
+    }
+
+    private static void smallToLarge() {
+        int n = scanner.nextInt();
+
+        int n1, n2, n3;
+        int temp;
+
+        for (int i = 1; i <= n; i++) {
+            System.out.println("Enter number ");
+            n1 = scanner.nextInt();
+            n2 = scanner.nextInt();
+            n3 = scanner.nextInt();
+
+            if (n1 > n2) {
+                temp = n1;
+                n1 = n2;
+                n2 = temp;
+            }
+
+            if (n2 > n3) {
+                temp = n2;
+                n2 = n3;
+                n3 = temp;
+            }
+
+            if (n1 > n2) {
+                temp = n1;
+                n1 = n2;
+                n2 = temp;
+            }
+
+            System.out.print("Case " + ": " + i + " " + n1 + " " + n2 + " " + n3);
+            System.out.println();
+
+
+        }
+    }
+
+    private static void problem7() {
+
+    }
+
+    private static void lsdDigit() {
+        int firstDigit = 0;
+        int result;
+
+        int inputNumber = scanner.nextInt();
+        result = inputNumber / 10;
+        firstDigit = inputNumber % 10;
+
+        System.out.println("Result: " + result);
+        System.out.println("First Digit: " + firstDigit);
+
+        result = result / 10;
+        firstDigit = result % 10;
+
+        System.out.println("Result: " + result);
+        System.out.println("First Digit: " + firstDigit);
+
+        result = result / 10;
+        firstDigit = result % 10;
+
+        System.out.println("Result: " + result);
+        System.out.println("First Digit: " + firstDigit);
+
+        result = result / 10;
+        firstDigit = result % 10;
+
+        System.out.println("Result: " + result);
+        System.out.println("First Digit: " + firstDigit);
+
+/*        for (int j = 1; j <= 5; j++) {
+
+            result = inputNumber / 10;
+            firstDigit = inputNumber % 10;
+
+            System.out.println("Result: " + result);
+            System.out.println("First Digit: " + firstDigit);
+
+            if (result == 0) {
+                break;
+            }
+
+        }*/
+
+        System.out.println(firstDigit);
+
+
+    }
+
+    private static void problem6() {
+        int lsd = 0, msd = 0;
+        int result;
+        int t = scanner.nextInt();
+        for (int i = 1; i <= t; i++) {
+            int inputNumber = scanner.nextInt();
+            lsd = inputNumber % 10;
+
+            for (int j = 1; j <= 5; j++) {
+                result = inputNumber / 10;
+                msd = inputNumber % 10;
+
+                inputNumber = result;
+
+                System.out.println("Msd Digit: " + msd);
+
+
+                if (result == 0) {
+                    break;
+                }
+
+            }
+            result = lsd + msd;
+
+            System.out.println("total Result: " + result);
+
+        }
+
+
+    }
+
+    private static void problem5() {
+        System.out.println("Total Test Case: ");
+        int T = scanner.nextInt();
+
+
+        for (int i = 1; i <= T; i++) {
+
+            System.out.println("total square");
+
+            int n = scanner.nextInt();
+            for (int j = 1; j <= n; j++) {
+
+                for (int k = 1; k <= n; k++) {
+                    System.out.print("*");
+                }
+                System.out.println();
+            }
+
+        }
+    }
+
+    private static void problem4() {
+
+        int T = scanner.nextInt();
+
+        for (int i = 1; i <= T; i++) {
+
+            int n = scanner.nextInt();
+            System.out.print("Case " + i + ":");
+            for (int j = 1; j <= n; j++) {
+                if (n % j == 0) {
+                    System.out.print(" " + j);
+                }
+
+            }
+
+        }
+    }
+
+    private static void problem3() {
+        for (int i = 1000; i >= 1; i--) {
+            if (i % 5 == 0) {
+                System.out.println();
+            }
+            System.out.print(i + "\t");
+
+        }
+
+    }
+
+    private static void problem2() {
+        System.out.println("input Test Case: ");
+        int T = scanner.nextInt();
+        int n[] = new int[101];
+
+        for (int i = 1; i <= T; i++) {
+
+            System.out.println("Enter Number");
+            n[i] = scanner.nextInt();
+
+            if (n[i] % 2 == 0) {
+                System.out.println("even");
+            } else {
+                System.out.println("odd");
+            }
+
+        }
+
+    }
+
+    private static void problem1() {
+
+        int T = scanner.nextInt();
+        for (int i = 1; i <= T; i++) {
+
+            int n = scanner.nextInt();
+            if (n % i == 0) {
+                System.out.println("even");
+            } else {
+                System.out.println("odd");
+            }
+
+        }
+    }
+
+    private static void SinglePatternObject() {
+        SinglePatternClass singlePatternClass;
+
+        singlePatternClass = SinglePatternClass.getSinglePatternClass();
+
+        System.out.println(singlePatternClass);
+
+        SinglePatternClass singlePatternClass1 = SinglePatternClass.getSinglePatternClass();
+        System.out.println(singlePatternClass1);
+
+/*        SinglePatternClass test = new SinglePatternClass();
+        System.out.println(test);
+        SinglePatternClass test1 = new SinglePatternClass();
+        System.out.println(test1);*/
+
+
+    }
+
+    static class SinglePatternClass {
+        public static SinglePatternClass singlePatternClass;
+
+        public static SinglePatternClass getSinglePatternClass() {
+            if (singlePatternClass == null) {
+                singlePatternClass = new SinglePatternClass();
+            }
+            return singlePatternClass;
+        }
 
     }
 
@@ -73,7 +354,6 @@ public class Hello {
         arrayList.add("4");
         arrayList.add("5");
 
-
         //Traverse
         for (int i = 0; i < arrayList.size(); i++) {
             System.out.println("Traverse Item: " + arrayList.get(i));
@@ -101,9 +381,9 @@ public class Hello {
             }
         }
         if (countCheck == 0) {
-            System.out.println(" not Prime Number " + number);
+            System.out.println(" Prime Number " + number);
         } else {
-            System.out.println(" Prime Number");
+            System.out.println("Not Prime Number");
         }
     }
 
@@ -179,8 +459,8 @@ public class Hello {
         //ImmutableString();
         //AnotherRef();
         //StringCompare();
-        //Substring();
-        StringBufferBuilder();
+        Substring();
+        //StringBufferBuilder();
 
 
     }
@@ -197,9 +477,7 @@ public class Hello {
 
         for (String item : array) {
             System.out.print(" " + item);
-
         }
-
     }
 
     private static void StringCompare() {
@@ -271,7 +549,6 @@ public class Hello {
         String input1 = new String();
         input1 = "Md";
 
-
         System.out.println("String Literal " + input);
         System.out.println("By New Keyword Instance Create: " + input1);
 
@@ -303,6 +580,11 @@ public class Hello {
         System.out.println("ArrayList with duplicates: " + list);
 
         List<Integer> newList = list.stream().distinct().collect(Collectors.toList());
+
+        Set<Integer> setList = new HashSet<>(list);
+
+        setList.addAll(list);
+        System.out.println("" + setList.toString());
 
         System.out.println("ArrayList with duplicates removed: " + newList);
     }

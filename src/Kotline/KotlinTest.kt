@@ -1,4 +1,5 @@
 import java.util.Scanner
+import kotlin.math.sin
 
 fun main() {
     //init()
@@ -11,33 +12,58 @@ fun main() {
     //UnsafeandSafeCastOperator()
     //ElvisOperator()
     //CollectionPractice()
-    oopPractice()
+    //oopPractice()
+    //SingletoneObject()
+    operator()
 
 
 }
 
-fun oopPractice() {
+fun operator() {
+    //Safe call Operator =  ?
+    var input: String? = null
 
+    println(input?.uppercase())
+}
+
+fun SingletoneObject() {
+    val singlePatten = SinglePatten1()
+    println(singlePatten)
+
+    val singlePatten1 = SinglePatten1()
+    println(singlePatten1)
+
+    println(SinglePatten.getInstance())
+
+}
+
+class SinglePatten private constructor() {
+    companion object {
+        private var instance: SinglePatten? = null
+        fun getInstance() {
+            if (instance == null) {
+                instance = SinglePatten()
+            }
+        }
+    }
+
+}
+
+class SinglePatten1 {
+
+}
+
+fun oopPractice() {
 
     // ClassPractice()
     //NestedIneerClass()
     //ConstratorPractice()
     //DataClass()
     Extensionfun()
-
-
 }
 
 fun String.getTotalCharCount(input: String?): Int {
-
-    if (input != null) {
-        return input.length
-
-    } else {
-        return 0
-
-    }
-
+    return input?.length ?: 0
 }
 
 fun Extensionfun() {
@@ -45,10 +71,17 @@ fun Extensionfun() {
 
     var result: Int = input.getTotalCharCount(input)
 
-    println("Extension Function total Char count : "+result)
+    println("Extension Function total Char count : " + result)
 }
 
 fun DataClass() {
+
+    val list: ArrayList<String> = ArrayList<String>()
+    list.add("ruhul")
+
+    list[0].toString()
+    list[1].toString()
+
     val countryList: ArrayList<Country> = arrayListOf()
 
     countryList.add(Country("Bangladesh", 88))
@@ -87,7 +120,6 @@ open class Persion {
         println(id)
         println(password)
     }
-
 }
 
 class MdRahul : Persion {
@@ -144,7 +176,6 @@ class Student1(name: String?, roll: Int?, department: String) {
         this.name = name
         this.roll = roll
         this.department = department
-
     }
 
     fun display() {
@@ -380,17 +411,42 @@ fun FunctionKotlin() {
 
     };
 
+    HOrderfunc(10, 10) { result ->
+
+    }
+
     HigherOrderFunctionWithLamda1(10, result = { result ->
         println("Higher Order Function: " + result)
 
     }, 10)
 
+    higherOrderfun(10, 20) { result ->
+        println(result)
 
+    }
+
+
+}
+
+fun HOrderfunc(i: Int, i2: Int, result: (Int) -> Unit) {
+
+
+}
+
+fun higherOrderfun(i: Int, i1: Int, result: (Int) -> Unit) {
+    val res = i + i1
+    result(res)
 }
 
 fun HigherOrderFunctionWithLamda(i: Int, i1: Int, result: (Int) -> Unit) {
     val res = i + i1
     result(res)
+
+}
+
+fun TestFun(i: Int, i2: Int, result: (Int) -> Unit) {
+
+    result(i + i2)
 
 }
 

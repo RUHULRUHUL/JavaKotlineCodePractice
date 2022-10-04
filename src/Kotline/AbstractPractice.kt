@@ -31,7 +31,7 @@ class Student : Department {
 
     override fun display() {
         println("Student Name: " + name)
-        //info()
+        info()
 
     }
 
@@ -58,16 +58,15 @@ class BangladeshBank : Bank() {
 fun main() {
     val student = Student("Md Rahul")
     student.display()
-    student.info()
 
-    var bank = Sbi()
+/*    var bank = Sbi()
     var totalInterest: Double? = bank.interest(100, 5.00, 15)
     println("Sbi Bank Intereste: " + totalInterest)
     println()
 
     var bdBank = BangladeshBank()
     var bdtotalInterest: Double? = bdBank.interest(100, 5.00, 15)
-    println("Bd Bank Intereste: " + bdtotalInterest)
+    println("Bd Bank Intereste: " + bdtotalInterest)*/
 
 
 }

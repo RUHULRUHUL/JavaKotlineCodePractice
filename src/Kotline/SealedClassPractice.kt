@@ -12,10 +12,12 @@ sealed class Data{
 fun  getData():Data{
     return Data.Error((10..100).random().toString())
 }
+fun  getValue():Data{
+    return Data.Success("ruhul")
+}
 
 
 fun main(){
-
 
     val data  = getData()
     when(data){
